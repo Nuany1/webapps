@@ -1,0 +1,22 @@
+server:
+  port: 6003
+spring:
+  application:
+    name: client
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config #来定位配置服务器。
+      label: master
+      name: application
+      profile: dev
+eureka:
+  client:
+    register-with-eureka: true #是否将自己注入eureka
+    service-url:
+      defaultZone: http://localhost:6001/eureka
+  instance:
+    hostname: eureka-client #eureka服务端实例名称
+    prefer-ip-address: true #访问路径可以显示IP地址
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}

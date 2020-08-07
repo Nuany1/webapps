@@ -1,0 +1,15 @@
+server:
+  port: 6005
+spring:
+  application:
+    name: nacos
+  cloud:
+    nacos:
+      server-addr: 172.16.11.123:8848
+      config:
+        file-extension: yml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

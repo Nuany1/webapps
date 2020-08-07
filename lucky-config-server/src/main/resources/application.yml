@@ -1,0 +1,26 @@
+server:
+  port: 6002
+spring:
+  application:
+    name: config
+  profiles:
+    active: git    # native 启用本地配置文件目录
+  cloud:
+    config:
+      server:
+        #native:
+        #  search-locations: D:/eureka-config/conf   #配置文件所在目录
+        git:
+          uri: https://github.com/Nuany1/webapps.git
+          search-paths: config
+          default-label: master
+          username: Nuany1
+          password: quan..@123456
+      label: master
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6001/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}

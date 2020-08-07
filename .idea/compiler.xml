@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="lucky-config-server" />
+        <module name="lucky-eureka-server" />
+        <module name="lucky-eureka-client" />
+        <module name="demo" />
+        <module name="lucky-nacos-client" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo" options="-parameters" />
+      <module name="lucky-config-server" options="-parameters" />
+      <module name="lucky-eureka-client" options="-parameters" />
+      <module name="lucky-eureka-server" options="-parameters" />
+      <module name="lucky-nacos-client" options="-parameters" />
+    </option>
+  </component>
+</project>
